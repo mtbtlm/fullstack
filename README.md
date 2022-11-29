@@ -9,7 +9,9 @@ For the backend part we used the flask framework.
 
 We use a virtual environment for the backend, so you need to start one: go to backend\env\Scripts and type 'activate' in terminal.
 
-Once it's done, go to the folder \backend\ and start 'python base.py'. It is located at http://localhost:5000/
+Once it's done, go to the folder \backend\ and type "pip install -r requirements.txt" in the terminal
+
+Then type 'python base.py'. It is located at http://localhost:5000/
 
 ### Frontend 
 For the frontend part we used ReactJs.
