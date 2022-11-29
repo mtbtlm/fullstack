@@ -1,7 +1,7 @@
 # Film_Project
 > A film project with Damien BALLATORE, Mathieu BARTHELEMY, Quentin POLGE
 
-In this project, the goal was to develop an API to display films.
+In this project, the goal was to develop an API to display and search films.
 
 
 ### Backend
@@ -22,18 +22,21 @@ It is located at http://localhost:3000/
 When you are in the app, you can use the searchbar to search the film you want.
 There are also three buttons that can show you the top 5 of films according to their category.
 
-![Anime list](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/anime_list_blog.png)
-If you are logged in you can write a comment here :
-![comment](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/comments.png)
-Else, you can login here or register :
-![registe](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/register.png)
+![appbase](https://github.com/mtbtlm/fullstack/blob/master/screen_app1.png)
+
+Here is when you press a button to get a top 5 films:
 
 
-Here is the list of users in the admin part of the api :
-![userlist](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/userlist.png)
+![top](https://github.com/mtbtlm/fullstack/blob/master/screen_app2.png)
 
 
-### Issue
-The only main issue we got is with the login and register page, while is it possible to log with a username and password already in the database, if we make a mistake the front will still create a token define as undefined. This lead to the switch of the webpage to the one that show the anime list. But while the token is present but not define, the access to the api/animes will be forbidden leading to an error. The problem is that the fetch function don't take 404 bad request as an error so the creation of the token is made. The only solution is to mannually delete the token "mytoken" using f12 and going in the Application section.
+Here you can see what happens when we type 'cinderella' in the searchbar:
 
-The same problem is existing for the register where using the api url localhost:8000/api/users we can post a new user but using the front the acess is forbidden, don't understand why.
+
+![search1](https://github.com/mtbtlm/fullstack/blob/master/screen_app3_search1.png)
+
+
+Here is another example with 'toy story':
+![search2](https://github.com/mtbtlm/fullstack/blob/master/screen_app4_search2.png)
+
+
