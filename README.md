@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Film_Project
+> A film project with Damien BALLATORE, Mathieu BARTHELEMY, Quentin POLGE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, the goal was to develop an API to display films.
 
-## Available Scripts
 
-In the project directory, you can run:
+### Backend
+For the backend part we used the flask framework.
 
-### `npm start`
+We use a virtual environment for the backend, so you need to start one: go to backend\env\Scripts and type 'activate' in terminal.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Once it's done, go to the folder \backend\ and start 'python base.py'. It is located at http://localhost:5000/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend 
+For the frontend part we used ReactJs.
+To start the application, first go to the root and type 'npm install' at least once, and then 'npm start'.
+It is located at http://localhost:3000/
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## User section 
+When you are in the app, you can use the searchbar to search the film you want.
+There are also three buttons that can show you the top 5 of films according to their category.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Anime list](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/anime_list_blog.png)
+If you are logged in you can write a comment here :
+![comment](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/comments.png)
+Else, you can login here or register :
+![registe](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/register.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here is the list of users in the admin part of the api :
+![userlist](https://github.com/ZenosukeFukami/Anime_Project/blob/main/images/userlist.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Issue
+The only main issue we got is with the login and register page, while is it possible to log with a username and password already in the database, if we make a mistake the front will still create a token define as undefined. This lead to the switch of the webpage to the one that show the anime list. But while the token is present but not define, the access to the api/animes will be forbidden leading to an error. The problem is that the fetch function don't take 404 bad request as an error so the creation of the token is made. The only solution is to mannually delete the token "mytoken" using f12 and going in the Application section.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The same problem is existing for the register where using the api url localhost:8000/api/users we can post a new user but using the front the acess is forbidden, don't understand why.
